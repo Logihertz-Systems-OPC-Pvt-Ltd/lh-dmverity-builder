@@ -1,0 +1,22 @@
+{
+  "system_identifier": "vulnerable-dev-node",
+  "organization": "Unverified Test Setup",
+  "lead_architect": "Untrusted",
+  "verity_enabled": false,
+  "rootfs_read_only": false,
+  "error_behavior": "ignore",
+  "roothash_signed": false,
+  "secure_boot_fuse_locked": false,
+  "hash_algorithm": "sha1",
+  "salt_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+  "fec_enabled": false,
+  "fec_roots": 0,
+  "rollback_protection_enabled": false,
+  "minimum_svn": 0,
+  "data_block_size": 512,
+  "hash_block_size": 512,
+  "allow_cmdline_verity_override": true,
+  "initramfs_signature_verified": false,
+  "ab_slot_fallback_enabled": false,
+  "corruption_telemetry_logged": false
+}

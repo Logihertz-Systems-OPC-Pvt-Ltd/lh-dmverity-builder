@@ -1,0 +1,27 @@
+[package]
+name = "lh-dmverity-builder"
+version = "0.1.0"
+edition = "2021"
+authors = [
+    "logihertzsystems <ops@logihertz.com>",
+    "Sameer Tawade <ops@logihertz.com>"
+]
+description = "Zero-dependency pure-Rust dm-verity Merkle tree builder, v1 superblock serializer, device-mapper table generator, and 10-rule immutable rootfs posture auditor with SARIF v2.1.0 reporting."
+license = "Apache-2.0"
+repository = "https://github.com/Logihertz-Systems-OPC-Pvt-Ltd/lh-dmverity-builder"
+homepage = "https://logihertz.com/"
+readme = "README.md"
+keywords = ["dm-verity", "merkle-tree", "immutable-rootfs", "sha256", "security"]
+categories = ["cryptography", "command-line-utilities", "embedded"]
+
+[lib]
+name = "lh_dmverity_builder"
+path = "src/lib.rs"
+
+[[bin]]
+name = "lh-dmverity"
+path = "src/main.rs"
+
+# 100% Zero External Dependencies Mandate
+# Uses exclusively the Rust Standard Library (std)
+[dependencies]

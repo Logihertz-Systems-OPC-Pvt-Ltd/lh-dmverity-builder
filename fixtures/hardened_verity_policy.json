@@ -1,0 +1,22 @@
+{
+  "system_identifier": "logihertz-edge-orin-01",
+  "organization": "Logihertz Systems (OPC) Private Limited",
+  "lead_architect": "Sameer Tawade",
+  "verity_enabled": true,
+  "rootfs_read_only": true,
+  "error_behavior": "panic",
+  "roothash_signed": true,
+  "secure_boot_fuse_locked": true,
+  "hash_algorithm": "sha256",
+  "salt_hex": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "fec_enabled": true,
+  "fec_roots": 8,
+  "rollback_protection_enabled": true,
+  "minimum_svn": 2,
+  "data_block_size": 4096,
+  "hash_block_size": 4096,
+  "allow_cmdline_verity_override": false,
+  "initramfs_signature_verified": true,
+  "ab_slot_fallback_enabled": true,
+  "corruption_telemetry_logged": true
+}

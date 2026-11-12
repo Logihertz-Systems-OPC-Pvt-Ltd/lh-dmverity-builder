@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+    tags: [ "v*" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Build, Lint & Test (Rust Stable)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+
+      - name: Rust formatting check
+        run: cargo fmt --check
+
+      - name: Rust Clippy lint check (-D warnings)
+        run: cargo clippy --all-targets -- -D warnings
+
+      - name: Execute test suite
+        run: cargo test --verbose
+
+      - name: Build release binary
+        run: cargo build --release
+
+      - name: CLI smoke tests
+        run: |
+          ./target/release/lh-dmverity --version
+          ./target/release/lh-dmverity --help
+          ./target/release/lh-dmverity scan fixtures/hardened_verity_policy.json --format table
+          ./target/release/lh-dmverity scan fixtures/hardened_verity_policy.json --format json
+          ./target/release/lh-dmverity scan fixtures/hardened_verity_policy.json --format sarif
+          ./target/release/lh-dmverity build-tree fixtures/sample_rootfs.img --output-tree /tmp/tree.bin --superblock /tmp/sb.bin
+          ./target/release/lh-dmverity verify-tree fixtures/sample_rootfs.img --root-hash bf11eab605768b586ada22b7ef0f56117176727f5f8690f8d921ec31cfcf6bca
+          ./target/release/lh-dmverity gen-table fixtures/sample_rootfs.img --data-dev /dev/mmcblk0p2 --hash-dev /dev/mmcblk0p3

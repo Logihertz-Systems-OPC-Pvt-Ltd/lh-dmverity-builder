@@ -1,0 +1,70 @@
+================================================================================
+NOTICE
+================================================================================
+Product:       Logihertz dm-verity Merkle Tree Builder & Posture Auditor (lh-dmverity-builder)
+CLI Alias:     lh-dmverity (bin/lh-dmverity)
+Version:       0.1.0
+Release Date:  2026-11-12
+Organization:  Logihertz Systems (OPC) Private Limited
+Corporate URL: https://logihertz.com/
+Contact:       ops@logihertz.com / security@logihertz.com
+Copyright:     (c) 2026 Logihertz Systems (OPC) Private Limited. All Rights Reserved.
+Creator, Founder, Director & Sole Developer: Sameer Tawade <ops@logihertz.com>
+
+--------------------------------------------------------------------------------
+SECTION 1: APACHE LICENSE 2.0 SECTION 4(d) ATTRIBUTION
+--------------------------------------------------------------------------------
+This product includes software developed by Logihertz Systems (OPC) Private
+Limited and its contributors under the Apache License, Version 2.0.
+
+You may obtain a copy of the License at:
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+License for the specific language governing permissions and limitations under
+the License.
+
+--------------------------------------------------------------------------------
+SECTION 2: TRADEMARK & BRAND RESERVATION
+--------------------------------------------------------------------------------
+"Logihertz", "Logihertz Systems", "Logihertz Systems (OPC) Private Limited",
+"lh-dmverity-builder", "lh-dmverity", and associated logotypes are trademarks of
+Logihertz Systems (OPC) Private Limited in India and other jurisdictions.
+
+No trademark or brand rights are granted by the Apache License 2.0, except for
+reasonable, customary attribution and identification of the original software.
+"Linux" is the registered trademark of Linus Torvalds. "dm-verity" is a kernel
+subsystem of the Linux device-mapper.
+
+--------------------------------------------------------------------------------
+SECTION 3: CLEAN-ROOM RUST 2021 ARCHITECTURE & ZERO EXTERNAL DEPENDENCIES
+--------------------------------------------------------------------------------
+lh-dmverity-builder is engineered from first principles as an independent,
+clean-room Rust utility under `#![forbid(unsafe_code)]`.
+
+It operates with 100% zero external crate dependencies ([dependencies] in
+Cargo.toml is empty), linking exclusively against the Rust Standard Library (std).
+Cryptographic FIPS 180-4 SHA-256 hashing, Merkle tree construction, binary
+superblock serialization, and JSON/SARIF parsing are implemented in pure safe Rust.
+
+--------------------------------------------------------------------------------
+SECTION 4: TECHNICAL SPECIFICATIONS & STANDARDS CONFORMANCE
+--------------------------------------------------------------------------------
+This software conforms to the following standards and specifications:
+  - Rust 2021 Edition (ISO/IEC 9899 and safe memory safety guarantees)
+  - Linux Kernel Documentation: Documentation/admin-guide/device-mapper/verity.rst
+  - NIST FIPS 180-4: Secure Hash Standard (SHA-256)
+  - ChromeOS / Android dm-verity v1 On-Disk Superblock Specification
+  - OASIS SARIF v2.1.0: Static Analysis Results Interchange Format
+  - OWASP & CWE Embedded Security Classifications:
+    CWE-353 (Missing Integrity Check / Unprotected Rootfs),
+    CWE-693 (Protection Mechanism Failure / Permissive Error Handling),
+    CWE-347 (Improper Verification of Cryptographic Signature),
+    CWE-328 (Reversible One-Way Hash / Deprecated Algorithm),
+    CWE-330 (Use of Insufficiently Random Values / Weak Salt),
+    CWE-367 (Time-of-check Time-of-use Race / Missing FEC),
+    CWE-400 (Uncontrolled Resource Consumption / Non-4K Blocks),
+    CWE-250 (Execution with Unnecessary Privileges / Cmdline Overrides),
+    CWE-755 (Improper Handling of Exceptional Conditions / Missing A/B Fallback)
