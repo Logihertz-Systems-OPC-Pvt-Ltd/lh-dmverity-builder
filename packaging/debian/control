@@ -1,0 +1,9 @@
+Package: lh-dmverity-builder
+Version: 0.1.0
+Section: utils
+Priority: optional
+Architecture: amd64
+Maintainer: Sameer Tawade <ops@logihertz.com>
+Homepage: https://www.logihertz.com
+Description: lh-dmverity - Level-by-Level SHA-256 Merkle Hash Tree Hierarchy
+ Memory-safe pure-Rust (#![forbid(unsafe_code)]) Linux dm-verity SHA-256 Merkle tree builder, 512-byte v1 superblock serializer, inclusion proof verifier, and 10-rule immutable rootfs posture auditor.
